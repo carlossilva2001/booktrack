@@ -5,7 +5,7 @@
     if (!livro || typeof livro.titulo !== "string" || !livro.titulo.trim()) {
       return "Informe o título do livro.";
     }
-    if (typeof livro.autors !== "string" || !livro.autor.trim()) {
+    if (typeof livro.autor !== "string" || !livro.autor.trim()) {
       return "Informe o autor do livro.";
     }
     if (
