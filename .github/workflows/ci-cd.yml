@@ -1,0 +1,52 @@
+name: CI/CD BookTrack
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Verificar e gerar build
+        run: npm run build
+      - name: Executar testes JavaScript
+        run: npm test
+
+  cd:
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Gerar build para publicacao
+        run: npm run build
+      - name: Enviar artefato para GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Publicar no GitHub Pages
+        id: publicar
+        uses: actions/deploy-pages@v4
