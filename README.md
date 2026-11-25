@@ -18,6 +18,7 @@ e status de leitura.
 ## Integrantes
 
 Carlos Daniel Teodoro da Silva RA: 2525763
+Carlos Eduardo Sert Ferreira RA: 2601354
 
 ## Funcionalidades
 
