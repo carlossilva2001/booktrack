@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Organize seus livros e acompanhe seu progresso de leitura."
+    >
+    <title>BookTrack - Rastreador de leitura</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="books.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="page-header">
+        <p class="eyebrow">SEU ESPAÇO DE LEITURA</p>
+        <h1>BookTrack</h1>
+        <p>Organize sua lista e acompanhe cada leitura no seu ritmo.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Adicionar livro</h2>
+        <form id="book-form">
+          <div class="form-grid">
+            <label>
+              Título
+              <input id="title" name="titulo" type="text" required maxlength="120">
+            </label>
+            <label>
+              Autor
+              <input id="author" name="autor" type="text" required maxlength="120">
+            </label>
+          </div>
+          <label class="status-field">
+            Status de leitura
+            <select id="new-status" name="status">
+              <option value="quero_ler">Quero ler</option>
+              <option value="lendo">Lendo</option>
+              <option value="concluido">Concluído</option>
+            </select>
+          </label>
+          <button type="submit">Adicionar à biblioteca</button>
+        </form>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="library" aria-labelledby="library-title">
+        <div class="library-heading">
+          <div>
+            <p class="eyebrow">SUA COLEÇÃO</p>
+            <h2 id="library-title">Meus livros</h2>
+          </div>
+          <span id="book-count" class="book-count">0 livros</span>
+        </div>
+        <ul id="book-list" class="book-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
