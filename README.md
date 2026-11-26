@@ -70,7 +70,7 @@ O workflow `.github/workflows/ci-cd.yml` é acionado em `push` e
 Configure o GitHub Pages do repositório para usar GitHub Actions em **Settings >
 Pages**. O endereço esperado do projeto é:
 
-[https://carlossilva2001.github.io/Booktrack/](https://carlossilva2001.github.io/Booktrack/)
+[https://carlossilva2001.github.io/Booktrack/](https://carlossilva2001.github.io/booktrack/)
 
 Se o proprietário ou o nome do repositório forem diferentes, ajuste o link.
 
