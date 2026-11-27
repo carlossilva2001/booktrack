@@ -19,6 +19,8 @@ e status de leitura.
 
 Carlos Daniel Teodoro da Silva RA: 2525763
 Carlos Eduardo Sert Ferreira RA: 2601354
+Renan Gabriel Bueno RA: 2454254
+Lucas Nicoletti RA: 2601427
 
 ## Funcionalidades
 
